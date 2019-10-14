@@ -1,0 +1,37 @@
+{ 
+   "deviceTemplateList":[ 
+      { 
+         "templateId":"72babaf2-68b6-4176-92d5-fa8de58e19d8",
+         "device":[ 
+            { 
+               "csv-status":"complete",
+               "csv-deviceId":"f3d4159b-4172-462c-9c8d-8db76c31521d",
+               "csv-deviceIP":"4.4.4.61",
+               "csv-host-name":"vedge02",
+               "/1/loopback1/interface/ip/address":"2.2.2.2/32",
+               "/0/ge0/0/interface/ip/address":"20.20.20.2/24",
+               "//system/host-name":"vedge02",
+               "//system/system-ip":"4.4.4.61",
+               "//system/site-id":"300",
+               "csv-templateId":"72babaf2-68b6-4176-92d5-fa8de58e19d8",
+               "selected":"true"
+            },
+            { 
+               "csv-status":"complete",
+               "csv-deviceId":"4af9e049-0052-47e9-83af-81a5825f7ffe",
+               "csv-deviceIP":"4.4.4.60",
+               "csv-host-name":"vedge01",
+               "/1/loopback1/interface/ip/address":"1.1.1.1/32",
+               "/0/ge0/0/interface/ip/address":"10.10.10.2/24",
+               "//system/host-name":"vedge02",
+               "//system/system-ip":"4.4.4.60",
+               "//system/site-id":"200",
+               "csv-templateId":"72babaf2-68b6-4176-92d5-fa8de58e19d8",
+               "selected":"true"
+            }
+         ],
+         "isEdited":"false",
+         "isMasterEdited":"false"
+      }
+   ]
+}
