@@ -1,0 +1,21 @@
+{
+  "auth": {
+    "hostname": "sandbox-ucsm1.cisco.com",
+    "username": "admin",
+    "password": "password"
+  },
+  "action": {
+    "method": "configure",
+    "objects": [
+     {
+            "module": "ucsmsdk.mometa.org.OrgOrg",
+            "class": "OrgOrg",
+            "properties":{
+                "parent_mo_or_dn": "org-root",
+                "name": "NewStore"
+            },
+            "message": "created organization NewStore"
+        }
+    ]
+  }
+}
