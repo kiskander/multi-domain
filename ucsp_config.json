@@ -28,3 +28,32 @@
         }
     }
 }
+{
+    "statusCode": 200,
+    "body": {
+        "request": {
+            "auth": {
+                "hostname": "sandbox-ucsm1.cisco.com",
+                "username": "admin",
+                "password": "********"
+            },
+            "action": {
+                "method": "configure",
+                "objects": [
+                    {
+                        "module": "ucsmsdk.mometa.org.OrgOrg",
+                        "class": "OrgOrg",
+                        "properties": {
+                            "parent_mo_or_dn": "org-root",
+                            "name": "Tenant_1"
+                        },
+                        "message": "created organization Tenant_1"
+                    }
+                ]
+            }
+        },
+        "response": {
+            "object_count": 1
+        }
+    }
+}
