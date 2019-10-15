@@ -1,23 +1,243 @@
 {
-    "fvnsVlanInstP":{
-        "attributes":{
-            "name":"test_vlan"
-        },
-        "children":[
-            {
-                "fvnsEncapBlk":{
-                    "attributes":{
-                        "from":"vlan-222",
-                        "to":"vlan-223"
+    "custom_stats": {},
+    "plays": [
+        {
+            "play": {
+                "duration": {
+                    "end": "2019-10-15T18:09:55.651449Z",
+                    "start": "2019-10-15T18:09:52.680871Z"
+                },
+                "id": "000d3a1a-1a9b-c92b-3ba6-000000000006",
+                "name": "ACI Tenant Management"
+            },
+            "tasks": [
+                {
+                    "hosts": {
+                        "aci1": {
+                            "_ansible_no_log": false,
+                            "action": "fail",
+                            "changed": false,
+                            "skip_reason": "Conditional result was False",
+                            "skipped": true
+                        }
+                    },
+                    "task": {
+                        "duration": {
+                            "end": "2019-10-15T18:09:52.717767Z",
+                            "start": "2019-10-15T18:09:52.699544Z"
+                        },
+                        "id": "000d3a1a-1a9b-c92b-3ba6-000000000008",
+                        "name": "Test that we have an ACI hostname, username, and password"
+                    }
+                },
+                {
+                    "hosts": {
+                        "aci1": {
+                            "_ansible_no_log": false,
+                            "_ansible_verbose_always": true,
+                            "action": "debug",
+                            "changed": false,
+                            "msg": "aci_state is present"
+                        }
+                    },
+                    "task": {
+                        "duration": {
+                            "end": "2019-10-15T18:09:52.766120Z",
+                            "start": "2019-10-15T18:09:52.725993Z"
+                        },
+                        "id": "000d3a1a-1a9b-c92b-3ba6-000000000009",
+                        "name": "debug"
+                    }
+                },
+                {
+                    "hosts": {
+                        "aci1": {
+                            "_ansible_no_log": false,
+                            "action": "include_vars",
+                            "ansible_facts": {
+                                "ap_description": "Application Profile Created Using Ansible",
+                                "bd_description": "Bridge Domain Created Using Ansible",
+                                "bd_subnet_description": "Subnet Created Using Ansible",
+                                "bd_subnets": [
+                                    {
+                                        "bd": "app_01_bd_01",
+                                        "bd_gateway": "10.1.100.1",
+                                        "bd_mask": 24,
+                                        "bd_scope": "public"
+                                    },
+                                    {
+                                        "bd": "app_01_bd_02",
+                                        "bd_gateway": "10.1.100.2",
+                                        "bd_mask": 24,
+                                        "bd_scope": "public"
+                                    }
+                                ],
+                                "bds": [
+                                    "app_01_bd_01",
+                                    "app_01_bd_02"
+                                ],
+                                "contract_description": "Contract Created Using Ansible",
+                                "contract_scope": "context",
+                                "contract_subjects": [
+                                    {
+                                        "contract": "web",
+                                        "subject": "https"
+                                    },
+                                    {
+                                        "contract": "sql",
+                                        "subject": "sql"
+                                    }
+                                ],
+                                "contracts": [
+                                    "web",
+                                    "sql"
+                                ],
+                                "contracts_to_filters": [
+                                    {
+                                        "contract": "web",
+                                        "filter": "https",
+                                        "subject": "https"
+                                    },
+                                    {
+                                        "contract": "sql",
+                                        "filter": "sql",
+                                        "subject": "sql"
+                                    }
+                                ],
+                                "epg_description": "EGP Created Using Ansible",
+                                "epg_to_contracts": [
+                                    {
+                                        "contract": "web",
+                                        "contract_type": "provider",
+                                        "epg": "app_01_epg_web"
+                                    },
+                                    {
+                                        "contract": "sql",
+                                        "contract_type": "provider",
+                                        "epg": "app_01_epg_db"
+                                    },
+                                    {
+                                        "contract": "sql",
+                                        "contract_type": "consumer",
+                                        "epg": "app_01_epg_web"
+                                    },
+                                    {
+                                        "contract": "web",
+                                        "contract_type": "consumer",
+                                        "epg": "app_01_epg_db"
+                                    }
+                                ],
+                                "epgs": [
+                                    {
+                                        "bd": "app_01_bd_01",
+                                        "epg": "app_01_epg_web"
+                                    },
+                                    {
+                                        "bd": "app_01_bd_02",
+                                        "epg": "app_01_epg_db"
+                                    }
+                                ],
+                                "filter_description": "Filter Created Using Ansible",
+                                "filter_entries": [
+                                    {
+                                        "entry": "https",
+                                        "filter": "https",
+                                        "port": 443
+                                    },
+                                    {
+                                        "entry": "sql",
+                                        "filter": "sql",
+                                        "port": 1433
+                                    }
+                                ],
+                                "filter_entry_ether_type": "ip",
+                                "filter_entry_ip_protocol": "tcp",
+                                "filters": [
+                                    "https",
+                                    "sql"
+                                ],
+                                "tenant_name": "AAA_Tenant",
+                                "vrf": "app_01_vrf",
+                                "vrf_description": "VRF Created Using Ansible"
+                            },
+                            "ansible_included_var_files": [
+                                "/home/jomcdono/projects/ansible-configurations/aci/vars/app_01.yml"
+                            ],
+                            "changed": false
+                        }
+                    },
+                    "task": {
+                        "duration": {
+                            "end": "2019-10-15T18:09:52.823551Z",
+                            "start": "2019-10-15T18:09:52.774157Z"
+                        },
+                        "id": "000d3a1a-1a9b-c92b-3ba6-00000000000a",
+                        "name": "Include Tenant vars"
+                    }
+                },
+                {
+                    "hosts": {
+                        "aci1": {
+                            "_ansible_no_log": false,
+                            "_ansible_parsed": true,
+                            "action": "aci_tenant",
+                            "changed": true,
+                            "current": [
+                                {
+                                    "fvTenant": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "descr": "Tenant Created/Configured Using Ansible",
+                                            "dn": "uni/tn-Tenant_1",
+                                            "name": "Tenant_1",
+                                            "nameAlias": "",
+                                            "ownerKey": "",
+                                            "ownerTag": ""
+                                        }
+                                    }
+                                }
+                            ],
+                            "invocation": {
+                                "module_args": {
+                                    "certificate_name": null,
+                                    "description": "Tenant Created/Configured Using Ansible",
+                                    "host": "sandboxapicdc.cisco.com",
+                                    "hostname": "sandboxapicdc.cisco.com",
+                                    "output_level": "normal",
+                                    "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+                                    "port": null,
+                                    "private_key": null,
+                                    "protocol": "https",
+                                    "state": "present",
+                                    "tenant": "Tenant_1",
+                                    "timeout": 30,
+                                    "use_proxy": true,
+                                    "use_ssl": true,
+                                    "username": "admin",
+                                    "validate_certs": false
+                                }
+                            }
+                        }
+                    },
+                    "task": {
+                        "duration": {
+                            "end": "2019-10-15T18:09:55.651449Z",
+                            "start": "2019-10-15T18:09:52.830115Z"
+                        },
+                        "id": "000d3a1a-1a9b-c92b-3ba6-00000000000b",
+                        "name": "CONFIGURE TENANT"
                     }
                 }
-            }
-        ]
-    }
-  }
- { "fvTenant":{
-        "attributes": {
-            "name": "Target"
+            ]
+        }
+    ],
+    "stats": {
+        "aci1": {
+            "changed": 1,
+            "failures": 0,
+            "ok": 3,
+            "skipped": 1,
+            "unreachable": 0
         }
     }
 }
