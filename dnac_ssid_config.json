@@ -1,0 +1,8 @@
+{
+    "name": "NewStore",
+    "securityLevel": "WPA2_ENTERPRISE",
+    "passphrase": "bestKR",
+    "enableFastLane": "True",
+    "enableMACFiltering": "False",
+    "enableBroadcastSSID": "True"
+}
