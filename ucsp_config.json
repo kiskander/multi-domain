@@ -1,21 +1,30 @@
 {
-  "auth": {
-    "hostname": "sandbox-ucsm1.cisco.com",
-    "username": "admin",
-    "password": "password"
-  },
-  "action": {
-    "method": "configure",
-    "objects": [
-     {
-            "module": "ucsmsdk.mometa.org.OrgOrg",
-            "class": "OrgOrg",
-            "properties":{
-                "parent_mo_or_dn": "org-root",
-                "name": "NewStore"
+    "statusCode": 200,
+    "body": {
+        "request": {
+            "auth": {
+                "hostname": "sandbox-ucsm1.cisco.com",
+                "username": "admin",
+                "password": "********"
             },
-            "message": "created organization NewStore"
+            "action": {
+                "method": "configure",
+                "objects": [
+                    {
+                        "module": "ucsmsdk.mometa.ls.LsServer",
+                        "class": "LsServer",
+                        "properties": {
+                            "parent_mo_or_dn": "org-root/org-Tenant_1",
+                            "name": "Tenant_1_SP1",
+                            "descr": "KVM IP: 10.255.252.16/22"
+                        },
+                        "message": "created Service Profile Tenant_1"
+                    }
+                ]
+            }
+        },
+        "response": {
+            "object_count": 2
         }
-    ]
-  }
+    }
 }
