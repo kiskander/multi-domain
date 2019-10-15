@@ -1,0 +1,23 @@
+{
+    "fvnsVlanInstP":{
+        "attributes":{
+            "name":"test_vlan"
+        },
+        "children":[
+            {
+                "fvnsEncapBlk":{
+                    "attributes":{
+                        "from":"vlan-222",
+                        "to":"vlan-223"
+                    }
+                }
+            }
+        ]
+    }
+  }
+ { "fvTenant":{
+        "attributes": {
+            "name": "Target"
+        }
+    }
+}
